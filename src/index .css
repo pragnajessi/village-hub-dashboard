@@ -48,16 +48,16 @@
   }
 
   .dark {
-    /* Deep near-black background — like VS Code / Linear dark */
-    --background: 222 47% 3%;
-    --foreground: 220 14% 90%;
+    /* Background — medium dark, like GitHub dark */
+    --background: 222 16% 14%;
+    --foreground: 220 14% 92%;
 
-    /* Cards slightly lighter than bg — clear depth */
-    --card: 222 40% 5%;
-    --card-foreground: 220 14% 90%;
+    /* Cards — noticeably lighter than background */
+    --card: 222 16% 19%;
+    --card-foreground: 220 14% 92%;
 
-    --popover: 222 40% 5%;
-    --popover-foreground: 220 14% 90%;
+    --popover: 222 16% 19%;
+    --popover-foreground: 220 14% 92%;
 
     --primary: 262 83% 68%;
     --primary-foreground: 222 47% 3%;
@@ -79,14 +79,14 @@
     --input: 222 30% 10%;
     --ring: 262 83% 68%;
 
-    /* Sidebar — light black/gray, just enough to separate from main bg */
-    --sidebar-background: 240 4% 7%;
-    --sidebar-foreground: 240 5% 75%;
+    /* Sidebar — darker gray than background, clear separation */
+    --sidebar-background: 240 5% 10%;
+    --sidebar-foreground: 240 5% 72%;
     --sidebar-primary: 262 83% 72%;
     --sidebar-primary-foreground: 222 47% 3%;
-    --sidebar-accent: 240 4% 11%;
+    --sidebar-accent: 240 4% 15%;
     --sidebar-accent-foreground: 240 5% 90%;
-    --sidebar-border: 240 4% 9%;
+    --sidebar-border: 240 4% 12%;
     --sidebar-ring: 262 83% 68%;
   }
 }
