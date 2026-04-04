@@ -47,21 +47,21 @@ const Index = () => (
       ))}
     </div>
 
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
       {/* Bar chart with blue gradient */}
-      <Card>
+      <Card className="min-w-0 overflow-hidden">
         <CardHeader><CardTitle>Top 10 States by Village Count</CardTitle></CardHeader>
-        <CardContent>
-          <ChartContainer config={{ count: { label: "Villages", color: "hsl(210, 70%, 55%)" } }} className="h-[300px]">
-            <BarChart data={topStatesByVillage} layout="vertical" margin={{ left: 80 }}>
+        <CardContent className="pr-2">
+          <ChartContainer config={{ count: { label: "Villages", color: "hsl(210, 70%, 55%)" } }} className="h-[320px] w-full">
+            <BarChart data={topStatesByVillage} layout="vertical" margin={{ left: 80, right: 20, top: 5, bottom: 5 }}>
               <defs>
                 <linearGradient id="barGradient" x1="0" y1="0" x2="1" y2="0">
                   <stop offset="0%" stopColor="hsl(220, 80%, 60%)" />
                   <stop offset="100%" stopColor="hsl(200, 90%, 50%)" />
                 </linearGradient>
               </defs>
-              <XAxis type="number" />
-              <YAxis dataKey="state" type="category" width={75} tick={{ fontSize: 11 }} />
+              <XAxis type="number" tick={{ fontSize: 10 }} />
+              <YAxis dataKey="state" type="category" width={75} tick={{ fontSize: 10 }} />
               <ChartTooltip content={<ChartTooltipContent />} />
               <Bar dataKey="count" fill="url(#barGradient)" radius={4} />
             </BarChart>
@@ -70,14 +70,14 @@ const Index = () => (
       </Card>
 
       {/* Line chart */}
-      <Card>
+      <Card className="min-w-0 overflow-hidden">
         <CardHeader><CardTitle>API Requests (Last 30 Days)</CardTitle></CardHeader>
-        <CardContent>
-          <ChartContainer config={{ requests: { label: "Requests", color: "hsl(210, 70%, 55%)" } }} className="h-[300px]">
-            <LineChart data={apiRequestsLast30Days}>
+        <CardContent className="pr-2">
+          <ChartContainer config={{ requests: { label: "Requests", color: "hsl(210, 70%, 55%)" } }} className="h-[320px] w-full">
+            <LineChart data={apiRequestsLast30Days} margin={{ left: 10, right: 20, top: 5, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" className="stroke-border" />
-              <XAxis dataKey="date" tick={{ fontSize: 10 }} />
-              <YAxis />
+              <XAxis dataKey="date" tick={{ fontSize: 9 }} />
+              <YAxis tick={{ fontSize: 10 }} />
               <ChartTooltip content={<ChartTooltipContent />} />
               <Line type="monotone" dataKey="requests" stroke="hsl(210, 70%, 55%)" strokeWidth={2} dot={false} />
             </LineChart>
@@ -86,11 +86,11 @@ const Index = () => (
       </Card>
 
       {/* Pie chart */}
-      <Card>
+      <Card className="min-w-0 overflow-hidden">
         <CardHeader><CardTitle>Users by Plan Type</CardTitle></CardHeader>
         <CardContent>
-          <ChartContainer config={{ count: { label: "Users" } }} className="h-[300px]">
-            <PieChart>
+          <ChartContainer config={{ count: { label: "Users" } }} className="h-[320px] w-full">
+            <PieChart margin={{ left: 10, right: 10, top: 5, bottom: 5 }}>
               <Pie data={usersByPlan} dataKey="count" nameKey="plan" cx="50%" cy="50%" outerRadius={100} label={({ plan, count }) => `${plan}: ${count}`}>
                 {usersByPlan.map((entry, idx) => (
                   <Cell key={idx} fill={entry.fill} />
@@ -103,14 +103,14 @@ const Index = () => (
       </Card>
 
       {/* Area chart */}
-      <Card>
+      <Card className="min-w-0 overflow-hidden">
         <CardHeader><CardTitle>Response Time Trends</CardTitle></CardHeader>
-        <CardContent>
-          <ChartContainer config={{ avgTime: { label: "Avg (ms)", color: "hsl(150, 60%, 45%)" }, p95Time: { label: "P95 (ms)", color: "hsl(0, 70%, 55%)" } }} className="h-[300px]">
-            <AreaChart data={responseTimeTrends}>
+        <CardContent className="pr-2">
+          <ChartContainer config={{ avgTime: { label: "Avg (ms)", color: "hsl(150, 60%, 45%)" }, p95Time: { label: "P95 (ms)", color: "hsl(0, 70%, 55%)" } }} className="h-[320px] w-full">
+            <AreaChart data={responseTimeTrends} margin={{ left: 10, right: 20, top: 5, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" className="stroke-border" />
-              <XAxis dataKey="date" tick={{ fontSize: 10 }} />
-              <YAxis />
+              <XAxis dataKey="date" tick={{ fontSize: 9 }} />
+              <YAxis tick={{ fontSize: 10 }} />
               <ChartTooltip content={<ChartTooltipContent />} />
               <Area type="monotone" dataKey="avgTime" stroke="hsl(150, 60%, 45%)" fill="hsl(150, 60%, 45%)" fillOpacity={0.2} />
               <Area type="monotone" dataKey="p95Time" stroke="hsl(0, 70%, 55%)" fill="hsl(0, 70%, 55%)" fillOpacity={0.1} />
