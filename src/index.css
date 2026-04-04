@@ -48,42 +48,45 @@
   }
 
   .dark {
-    --background: 224 71% 4%;
-    --foreground: 220 14% 95%;
+    /* Deep near-black background — like VS Code / Linear dark */
+    --background: 222 47% 3%;
+    --foreground: 220 14% 90%;
 
-    --card: 224 39% 8%;
-    --card-foreground: 220 14% 95%;
+    /* Cards slightly lighter than bg — clear depth */
+    --card: 222 40% 5%;
+    --card-foreground: 220 14% 90%;
 
-    --popover: 224 39% 8%;
-    --popover-foreground: 220 14% 95%;
+    --popover: 222 40% 5%;
+    --popover-foreground: 220 14% 90%;
 
     --primary: 262 83% 68%;
-    --primary-foreground: 224 71% 4%;
+    --primary-foreground: 222 47% 3%;
 
-    --secondary: 224 30% 12%;
-    --secondary-foreground: 220 14% 95%;
+    --secondary: 222 30% 8%;
+    --secondary-foreground: 220 14% 90%;
 
-    --muted: 224 30% 12%;
-    --muted-foreground: 220 9% 55%;
+    --muted: 222 30% 8%;
+    --muted-foreground: 220 9% 50%;
 
-    --accent: 224 30% 12%;
-    --accent-foreground: 220 14% 95%;
+    --accent: 222 30% 8%;
+    --accent-foreground: 220 14% 90%;
 
     --destructive: 0 62% 31%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 224 30% 14%;
-    --input: 224 30% 14%;
+    /* Borders barely visible — subtle separation */
+    --border: 222 30% 10%;
+    --input: 222 30% 10%;
     --ring: 262 83% 68%;
 
-    /* Sidebar stays dark charcoal in dark mode too */
-    --sidebar-background: 224 39% 6%;
-    --sidebar-foreground: 220 14% 90%;
+    /* Sidebar even deeper than main bg */
+    --sidebar-background: 222 47% 2%;
+    --sidebar-foreground: 220 14% 80%;
     --sidebar-primary: 262 83% 72%;
-    --sidebar-primary-foreground: 224 71% 4%;
-    --sidebar-accent: 224 30% 12%;
-    --sidebar-accent-foreground: 220 14% 95%;
-    --sidebar-border: 224 30% 10%;
+    --sidebar-primary-foreground: 222 47% 3%;
+    --sidebar-accent: 222 30% 7%;
+    --sidebar-accent-foreground: 220 14% 90%;
+    --sidebar-border: 222 30% 6%;
     --sidebar-ring: 262 83% 68%;
   }
 }
