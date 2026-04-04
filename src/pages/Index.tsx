@@ -52,12 +52,12 @@ const Index = () => (
       <Card className="min-w-0 overflow-hidden">
         <CardHeader><CardTitle>Top 10 States by Village Count</CardTitle></CardHeader>
         <CardContent className="pr-2">
-          <ChartContainer config={{ count: { label: "Villages", color: "hsl(210, 70%, 55%)" } }} className="h-[320px] w-full">
+          <ChartContainer config={{ count: { label: "Villages", color: "hsl(270, 50%, 75%)" } }} className="h-[320px] w-full">
             <BarChart data={topStatesByVillage} layout="vertical" margin={{ left: 80, right: 20, top: 5, bottom: 5 }}>
               <defs>
                 <linearGradient id="barGradient" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="hsl(220, 80%, 60%)" />
-                  <stop offset="100%" stopColor="hsl(200, 90%, 50%)" />
+                  <stop offset="0%" stopColor="hsl(270, 50%, 80%)" />
+                  <stop offset="100%" stopColor="hsl(270, 60%, 65%)" />
                 </linearGradient>
               </defs>
               <XAxis type="number" tick={{ fontSize: 10 }} />
