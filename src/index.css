@@ -38,14 +38,14 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
-    --sidebar-background: 270 60% 25%;
-    --sidebar-foreground: 270 20% 95%;
-    --sidebar-primary: 270 80% 80%;
-    --sidebar-primary-foreground: 270 60% 15%;
-    --sidebar-accent: 270 50% 35%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 270 40% 35%;
-    --sidebar-ring: 270 80% 70%;
+    --sidebar-background: 270 50% 75%;
+    --sidebar-foreground: 270 40% 15%;
+    --sidebar-primary: 270 60% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 50% 85%;
+    --sidebar-accent-foreground: 270 50% 15%;
+    --sidebar-border: 270 30% 80%;
+    --sidebar-ring: 270 60% 50%;
   }
 
   .dark {
