@@ -11,7 +11,7 @@ export function DashboardLayout({ children }: { children: ReactNode }) {
           <header className="h-12 flex items-center border-b border-border px-4">
             <SidebarTrigger />
           </header>
-          <main className="flex-1 p-4 md:p-6 overflow-auto">{children}</main>
+          <main className="flex-1 p-4 md:p-6 overflow-auto bg-[hsl(270,30%,96%)]">{children}</main>
         </div>
       </div>
     </SidebarProvider>
