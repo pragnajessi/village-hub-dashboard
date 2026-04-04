@@ -4,83 +4,87 @@
 
 @layer base {
   :root {
-    --background: 270 30% 96%;
-    --foreground: 270 50% 15%;
+    /* Neutral base — no purple tint on backgrounds */
+    --background: 220 14% 96%;
+    --foreground: 224 71% 4%;
 
     --card: 0 0% 100%;
-    --card-foreground: 270 50% 15%;
+    --card-foreground: 224 71% 4%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 270 50% 15%;
+    --popover-foreground: 224 71% 4%;
 
-    --primary: 270 60% 40%;
+    /* Purple is ONLY the accent/primary — not the whole palette */
+    --primary: 262 83% 58%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 270 20% 92%;
-    --secondary-foreground: 270 50% 15%;
+    --secondary: 220 13% 91%;
+    --secondary-foreground: 224 71% 4%;
 
-    --muted: 270 20% 92%;
-    --muted-foreground: 270 20% 45%;
+    --muted: 220 13% 91%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 270 20% 92%;
-    --accent-foreground: 270 50% 15%;
+    --accent: 220 13% 91%;
+    --accent-foreground: 224 71% 4%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 270 20% 85%;
-    --input: 270 20% 85%;
-    --ring: 270 60% 40%;
+    --border: 220 13% 87%;
+    --input: 220 13% 87%;
+    --ring: 262 83% 58%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 270 50% 75%;
-    --sidebar-foreground: 270 60% 10%;
-    --sidebar-primary: 270 60% 30%;
+    /* Sidebar — dark charcoal, not purple */
+    --sidebar-background: 224 71% 4%;
+    --sidebar-foreground: 220 14% 90%;
+    --sidebar-primary: 262 83% 68%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 270 50% 85%;
-    --sidebar-accent-foreground: 270 60% 10%;
-    --sidebar-border: 270 30% 80%;
-    --sidebar-ring: 270 60% 50%;
+    --sidebar-accent: 224 30% 12%;
+    --sidebar-accent-foreground: 220 14% 95%;
+    --sidebar-border: 224 30% 10%;
+    --sidebar-ring: 262 83% 58%;
   }
 
   .dark {
-    --background: 270 30% 8%;
-    --foreground: 270 20% 95%;
+    --background: 224 71% 4%;
+    --foreground: 220 14% 95%;
 
-    --card: 270 25% 12%;
-    --card-foreground: 270 20% 95%;
+    --card: 224 39% 8%;
+    --card-foreground: 220 14% 95%;
 
-    --popover: 270 25% 12%;
-    --popover-foreground: 270 20% 95%;
+    --popover: 224 39% 8%;
+    --popover-foreground: 220 14% 95%;
 
-    --primary: 270 60% 70%;
-    --primary-foreground: 270 60% 10%;
+    --primary: 262 83% 68%;
+    --primary-foreground: 224 71% 4%;
 
-    --secondary: 270 20% 18%;
-    --secondary-foreground: 270 20% 95%;
+    --secondary: 224 30% 12%;
+    --secondary-foreground: 220 14% 95%;
 
-    --muted: 270 20% 18%;
-    --muted-foreground: 270 15% 65%;
+    --muted: 224 30% 12%;
+    --muted-foreground: 220 9% 55%;
 
-    --accent: 270 20% 18%;
-    --accent-foreground: 270 20% 95%;
+    --accent: 224 30% 12%;
+    --accent-foreground: 220 14% 95%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 31%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 270 20% 20%;
-    --input: 270 20% 20%;
-    --ring: 270 60% 70%;
+    --border: 224 30% 14%;
+    --input: 224 30% 14%;
+    --ring: 262 83% 68%;
 
-    --sidebar-background: 270 40% 18%;
-    --sidebar-foreground: 270 20% 95%;
-    --sidebar-primary: 270 60% 75%;
-    --sidebar-primary-foreground: 270 60% 10%;
-    --sidebar-accent: 270 35% 25%;
-    --sidebar-accent-foreground: 270 20% 95%;
-    --sidebar-border: 270 30% 25%;
-    --sidebar-ring: 270 60% 70%;
+    /* Sidebar stays dark charcoal in dark mode too */
+    --sidebar-background: 224 39% 6%;
+    --sidebar-foreground: 220 14% 90%;
+    --sidebar-primary: 262 83% 72%;
+    --sidebar-primary-foreground: 224 71% 4%;
+    --sidebar-accent: 224 30% 12%;
+    --sidebar-accent-foreground: 220 14% 95%;
+    --sidebar-border: 224 30% 10%;
+    --sidebar-ring: 262 83% 68%;
   }
 }
 
