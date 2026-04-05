@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -6,19 +6,34 @@ import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { toast } from "sonner";
-import { mockVillages } from "@/lib/mock-data";
+
+interface Village {
+  id: number
+  name: string
+  code: string
+  subDistrict: { name: string; district: { name: string; state: { name: string } } }
+}
 
 const ContactForm = () => {
   const [villageSearch, setVillageSearch] = useState("");
-  const [selectedVillage, setSelectedVillage] = useState<typeof mockVillages[0] | null>(null);
+  const [selectedVillage, setSelectedVillage] = useState<Village | null>(null);
+  const [villages, setVillages] = useState<Village[]>([])
   const [open, setOpen] = useState(false);
 
-  const filteredVillages = useMemo(
-    () => (villageSearch.length > 0 ? mockVillages.filter((v) => v.name.toLowerCase().includes(villageSearch.toLowerCase())) : mockVillages),
-    [villageSearch]
-  );
+  useEffect(() => {
+    if (villageSearch.length < 2) return
 
-  const selectVillage = (village: typeof mockVillages[0]) => {
+    const timeout = setTimeout(() => {
+      fetch(`http://localhost:3000/api/v1/villages/search?q=${villageSearch}`)
+        .then(res => res.json())
+        .then(data => setVillages(data))
+        .catch(console.error)
+    }, 300)
+
+    return () => clearTimeout(timeout)
+  }, [villageSearch])
+
+  const selectVillage = (village: Village) => {
     setSelectedVillage(village);
     setVillageSearch(village.name);
     setOpen(false);
@@ -58,9 +73,9 @@ const ContactForm = () => {
                     <CommandList>
                       <CommandEmpty>No village found.</CommandEmpty>
                       <CommandGroup>
-                        {filteredVillages.map((v) => (
-                          <CommandItem key={v.name} value={v.name} onSelect={() => selectVillage(v)}>
-                            {v.name} — {v.district}, {v.state}
+                        {villages.map((v) => (
+                          <CommandItem key={v.id} value={v.name} onSelect={() => selectVillage(v)}>
+                            {v.name} — {v.subDistrict?.district?.name}, {v.subDistrict?.district?.state?.name}
                           </CommandItem>
                         ))}
                       </CommandGroup>
@@ -71,10 +86,10 @@ const ContactForm = () => {
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2"><Label>Sub-District</Label><Input value={selectedVillage?.subDistrict ?? ""} readOnly className="bg-muted" /></div>
-              <div className="space-y-2"><Label>District</Label><Input value={selectedVillage?.district ?? ""} readOnly className="bg-muted" /></div>
-              <div className="space-y-2"><Label>State</Label><Input value={selectedVillage?.state ?? ""} readOnly className="bg-muted" /></div>
-              <div className="space-y-2"><Label>Country</Label><Input value={selectedVillage?.country ?? ""} readOnly className="bg-muted" /></div>
+              <div className="space-y-2"><Label>Sub-District</Label><Input value={selectedVillage?.subDistrict?.name ?? ""} readOnly className="bg-muted" /></div>
+              <div className="space-y-2"><Label>District</Label><Input value={selectedVillage?.subDistrict?.district?.name ?? ""} readOnly className="bg-muted" /></div>
+              <div className="space-y-2"><Label>State</Label><Input value={selectedVillage?.subDistrict?.district?.state?.name ?? ""} readOnly className="bg-muted" /></div>
+              <div className="space-y-2"><Label>Country</Label><Input value="India" readOnly className="bg-muted" /></div>
             </div>
 
             <Button type="submit" className="mt-2">Submit</Button>
