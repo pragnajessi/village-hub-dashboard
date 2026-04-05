@@ -20,8 +20,7 @@ export const apiLogger = async (req: Request, res: Response, next: NextFunction)
           data: {
             endpoint: req.path,
             responseTime: Date.now() - start,
-            apiKeyId: key.id,
-            userId: key.userId
+            apiKeyId: key.id
           }
         })
       }
