@@ -6,7 +6,7 @@ A production-grade SaaS platform providing a comprehensive REST API for India's 
 VillageAPI: https://village-hub-dashboard-clxensgig-pragnajessiks-projects.vercel.app/
 
 ## 👥 Team
-Name: PragnaJessi Koduri Role: Frontend Developer 
+Name: PragnaJessi Koduri Role: Frontend Developer , 
 Name: Mohammad Faiz Role: Backend Developer 
 
 ## 🚀 Features
