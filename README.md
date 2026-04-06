@@ -3,10 +3,7 @@
 A production-grade SaaS platform providing a comprehensive REST API for India's complete village-level geographical data.
 
 ## 🌍 Live Demo
-
-Frontend: https://village-hub-dashboard.vercel.app
-Frontend Repo: https://github.com/pragnajessi/village-hub-dashboard
-Backend Repo: https://github.com/faizyy07/village-hub-dashboard
+VillageAPI: https://village-hub-dashboard-clxensgig-pragnajessiks-projects.vercel.app/
 
 ## 👥 Team
 Name: PragnaJessi Koduri Role: Frontend Developer 
